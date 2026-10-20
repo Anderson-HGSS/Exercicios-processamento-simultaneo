@@ -6,11 +6,11 @@
    [else
     (cons (first lst1) (concatena (rest lst1) lst2))]))
 
-(define (+p lst1 lst2)
+(define (soma-ponderada lst1 lst2)
   (cond
     [(and (empty? lst1) (empty? lst2)) 0]
     [else
-     (+ (* (first lst1) (first lst2)) (+p (rest lst1) (rest lst2)))]))
+     (+ (* (first lst1) (first lst2)) (soma-ponderada (rest lst1) (rest lst2)))]))
 
 (define (prefixo lst1 lst2)
   (cond
